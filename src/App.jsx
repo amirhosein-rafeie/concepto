@@ -1,35 +1,78 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import { Suspense, lazy } from "react";
+import SearchHead from "./SearchPart/SearchBy";
+const Layout = lazy(() => import("./components/Layout"));
+const Home = lazy(() => import("./HomePage/CategoriesHome"));
+const NormalLogin = lazy(() => import("./pages/NormalLogin"));
+const PhoneLogin = lazy(() => import("./pages/PhoneLogin"));
+const OTP = lazy(() => import("./configs/OTP"));
+const Contact = lazy(() => import("./pages/ContactUs"));
+const NotFound = lazy(() => import("./HomePage/NotFound"));
+
+const LoadingScreen = () => (
+  <div className="flex items-center justify-center h-screen text-gray-600">
+    <span className="animate-pulse">در حال بارگذاری...</span>
+  </div>
+);
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Suspense fallback={<LoadingScreen />}>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <Home />
+              <SearchHead />
+            </Layout>
+          }
+        />
+        <Route
+          path="/normallogin"
+          element={
+            <Layout>
+              <NormalLogin />
+            </Layout>
+          }
+        />
+        <Route
+          path="/phonelogin"
+          element={
+            <Layout>
+              <PhoneLogin />
+            </Layout>
+          }
+        />
+        <Route
+          path="/otp"
+          element={
+            <Layout>
+              <OTP />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/contactus"
+          element={
+            <Layout>
+              <Contact />
+            </Layout>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <Layout>
+              <NotFound />
+            </Layout>
+          }
+        />
+      </Routes>
+    </Suspense>
+  );
 }
 
-export default App
+export default App;
