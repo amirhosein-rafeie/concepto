@@ -1,4 +1,3 @@
-import { duration } from "@mui/material/styles";
 import React, { useState, useEffect, useRef } from "react";
 
 const toPersianDigits = (str) => {

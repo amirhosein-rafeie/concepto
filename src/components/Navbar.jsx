@@ -22,7 +22,6 @@ const Navbar = () => {
             {" "}
             <Button
               fullWidth
-              onClick={{}}
               variant="outlined"
               startIcon={<SearchSharpIcon className="text-gray-400" />}
               sx={{

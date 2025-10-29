@@ -5,34 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { blu, asiatech, farabi, bimeh, alibaba, snapp } from "../assets/images";
-
-const OfferCategories = [
-  { id: 1, name: "blu", amount: 12, linkName: "بلو بانک", img: blu },
-  { id: 2, name: "asiaTech", amount: 16, linkName: "آسیاتک", img: asiatech },
-  {
-    id: 3,
-    name: "farabi",
-    amount: 11,
-    linkName: "کارگزاری فارابی",
-    img: farabi,
-  },
-  {
-    id: 4,
-    name: "bimeBazar",
-    amount: 14,
-    linkName: "بیمه بازار",
-    img: bimeh,
-  },
-  {
-    id: 5,
-    name: "Alibaba",
-    amount: 18,
-    linkName: "گروه علی بابا",
-    img: alibaba,
-  },
-  { id: 6, name: "snapp", amount: 23, linkName: "اسنپ", img: snapp },
-];
+import { OfferCategories } from "../Constants/Configs";
 
 const JobOffers = () => {
   return (

@@ -3,45 +3,45 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import { categories } from "../Constants/Configs";
+// import {
+//   calc,
+//   Ai,
+//   bioTech,
+//   btc,
+//   coding,
+//   Ecom,
+//   grapghic,
+//   medic,
+//   music,
+//   scince,
+//   media,
+//   space,
+//   transport,
+//   cinema,
+// } from "../assets/images/index.js";
 
-import {
-  calc,
-  Ai,
-  bioTech,
-  btc,
-  coding,
-  Ecom,
-  grapghic,
-  medic,
-  music,
-  scince,
-  media,
-  space,
-  transport,
-  cinema,
-} from "../assets/images/index.js";
-
-const categories = [
-  { id: 1, name: "هوش مصنوعی", discription: "هوش مصنوعی", img: Ai },
-  { id: 2, name: "برنامه نویسی", discription: "برنامه نویسی", img: coding },
-  { id: 3, name: "ارز دیجیتال", discription: "ارز دیجیتال", img: btc },
-  { id: 4, name: "حسابداری", discription: "حسابداری", img: calc },
-  { id: 5, name: "گرافیک", discription: "گرافیک", img: grapghic },
-  { id: 6, name: "رسانه ها", discription: "رسانه ها", img: media },
-  { id: 7, name: "هوا فضا", discription: "هوا فضا", img: space },
-  { id: 8, name: "پزشکی", discription: "پزشکی", img: medic },
-  {
-    id: 9,
-    name: "تجارت الکترونیک",
-    discription: "تجارت الکترونیک",
-    img: Ecom,
-  },
-  { id: 10, name: "علمی", discription: "علمی", img: scince },
-  { id: 11, name: "موسیقی", discription: "موسیقی", img: music },
-  { id: 12, name: "بیو تکنولوژی", discription: "بیو تکنولوژی", img: bioTech },
-  { id: 13, name: "فیلم و سینما", discription: "فیلم و سینما", img: cinema },
-  { id: 14, name: "حمل و نقل", discription: "حمل و نقل", img: transport },
-];
+// const categories = [
+//   { id: 1, name: "هوش مصنوعی", discription: "هوش مصنوعی", img: Ai },
+//   { id: 2, name: "برنامه نویسی", discription: "برنامه نویسی", img: coding },
+//   { id: 3, name: "ارز دیجیتال", discription: "ارز دیجیتال", img: btc },
+//   { id: 4, name: "حسابداری", discription: "حسابداری", img: calc },
+//   { id: 5, name: "گرافیک", discription: "گرافیک", img: grapghic },
+//   { id: 6, name: "رسانه ها", discription: "رسانه ها", img: media },
+//   { id: 7, name: "هوا فضا", discription: "هوا فضا", img: space },
+//   { id: 8, name: "پزشکی", discription: "پزشکی", img: medic },
+//   {
+//     id: 9,
+//     name: "تجارت الکترونیک",
+//     discription: "تجارت الکترونیک",
+//     img: Ecom,
+//   },
+//   { id: 10, name: "علمی", discription: "علمی", img: scince },
+//   { id: 11, name: "موسیقی", discription: "موسیقی", img: music },
+//   { id: 12, name: "بیو تکنولوژی", discription: "بیو تکنولوژی", img: bioTech },
+//   { id: 13, name: "فیلم و سینما", discription: "فیلم و سینما", img: cinema },
+//   { id: 14, name: "حمل و نقل", discription: "حمل و نقل", img: transport },
+// ];
 
 const Categories = () => {
   const [showAllMobile, setShowAllMobile] = useState(false);

@@ -20,7 +20,7 @@ import cinema from "./cinema.png";
 import alibaba from "./alibaba.png";
 import asiatech from "./asiatech.png";
 import bimeh from "./bimeh.png";
-import snapp from "./snapp.png";
+import Snapp from "./snapp.png";
 import farabi from "./farabi.png";
 import blu from "./blu.png";
 import startup from "./startup.jpg";
@@ -58,7 +58,7 @@ export {
   alibaba,
   asiatech,
   bimeh,
-  snapp,
+  Snapp,
   farabi,
   startup,
   sakoo,

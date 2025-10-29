@@ -1,16 +1,10 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
-
+import { marks } from "../Constants/Configs";
 import { Location } from "../assets/images";
 
 function GoogleMaps() {
-  const marks = [
-    { id: 1, loc: [35.6, 51.39], title: "Tehran" },
-    { id: 2, loc: [32.6, 51.6], title: "Tabriz" },
-    { id: 3, loc: [38.08, 46.29], title: "Isfahan" },
-  ];
-
   const iconHa = new Icon({
     iconUrl: Location,
     iconSize: [45, 45],
