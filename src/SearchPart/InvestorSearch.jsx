@@ -61,7 +61,7 @@ const AdvisorSearch = () => {
                 {cat.output ? cat.output.toLocaleString() : "۵۷۷"}
               </span>
 
-              <span className="w-1/4 text-right pr-4">{cat.location}</span>
+              <span className="w-1/4 text-right pr-4">{cat.explanation}</span>
             </div>
           </div>
         ))}

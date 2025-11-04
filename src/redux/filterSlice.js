@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   filters: {
-    keywords: "",
+    name: "",
     location: "",
     companyType: "",
     industry: "",

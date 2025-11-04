@@ -15,16 +15,16 @@ const FilterBar = () => {
   return (
     <div
       dir="rtl"
-      className="w-full flex justify-start items-end gap-4 py-6 border-t border-gray-200 "
+      className="w-full flex justify-start items-end gap-4 py-6 border-t  border-gray-200 "
     >
       {filters.map((filter) => (
         <button
           key={filter.value}
           onClick={() => dispatch(setFilterType(filter.value))}
-          className={`w-[140px] h-10 border-2 rounded-2xl px-3 flex items-center justify-center gap-1 transition-all text-sm mr-[108px] ${
+          className={`w-[140px] bg-gray-200 h-10 border-2 rounded-2xl px-3 flex items-center justify-center gap-1 transition-all text-sm mr-[108px] ${
             filterType === filter.value
-              ? "bg-blue-600 text-white border-blue-600"
-              : "border-gray-300 text-gray-600 hover:bg-gray-100"
+              ? "bg-blue-600 text-black border-blue-600"
+              : "border-blue-300 text-black hover:bg-gray-100"
           }`}
         >
           {filter.label}

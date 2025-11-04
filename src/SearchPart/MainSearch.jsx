@@ -44,15 +44,13 @@ const MainSearch = () => {
   const displayData = getSortedData();
 
   return (
-    <div className="bg-gray-50 min-w-screen flex flex-cols items-center">
+    <div className="bg-gray-50  flex flex-start justify-center items-center">
       <div>
+        <SearchHead /> <FilterBar />
         <FilterBox />
       </div>
 
-      <div className="bg-white rounded-2xl border border-dashed border-gray-300 mt-4 p-5 flex flex-col gap-2">
-        <SearchHead />
-        <FilterBar />
-
+      <div className="bg-white rounded-2xl border border-dashed border-gray-300 mt-4 p-5 flex flex-col gap-2 flex-start">
         {displayData.map((cat) => (
           <div
             key={cat.id ?? cat.name}
