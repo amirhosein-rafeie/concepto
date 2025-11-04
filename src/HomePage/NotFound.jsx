@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 
 const NotFound = () => {
   return (
-    <div className="flex items-center justify-center flex-col text-center">
+    <div className="flex items-center justify-center flex-col text-center mt-16">
       <div>
         <img
           src={ERROR}

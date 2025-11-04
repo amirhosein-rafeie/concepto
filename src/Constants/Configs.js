@@ -14,6 +14,11 @@ import {
   transport,
   cinema,
 } from "../assets/images/index.js";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import DomainAddOutlinedIcon from "@mui/icons-material/DomainAddOutlined";
+import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
+import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
+import EventOutlinedIcon from "@mui/icons-material/EventOutlined";
 import { maram, sakoo, startup, digikalaProgram } from "../assets/images";
 import { BluSearch } from "../assets/images";
 import { TapsiSearch } from "../assets/images";
@@ -200,6 +205,13 @@ export const boxes = [
     prof: Alibaba,
   },
 ];
+export const MainSearchComponent = [
+  { icon: FavoriteBorderOutlinedIcon, label: "ذخیره شده‌ها", path: "/saved" },
+  { icon: DomainAddOutlinedIcon, label: "شرکت‌ها", path: "/companies" },
+  { icon: CallOutlinedIcon, label: "مخاطبین", path: "/contacts" },
+  { icon: AttachMoneyOutlinedIcon, label: "سرمایه گذار", path: "/investors" },
+  { icon: EventOutlinedIcon, label: "رویداد‌ها", path: "/events" },
+];
 export const companiesList = [
   {
     name: "بلوبانک",
@@ -208,6 +220,10 @@ export const companiesList = [
     location: "تهران",
     explanation: "لورم ایپسوم لورم ایپسوم متن ساختگی با تولید ",
     type: "private",
+    views: 31500,
+    likes: 25100,
+    rating: 5.3,
+    industryScore: 5.1,
   },
   {
     id: 2,
@@ -217,6 +233,10 @@ export const companiesList = [
     location: "ایران، شیراز",
     explanation: "لورم ایپسوم لورم ایپسوم متن ساختگی با تولید ",
     type: "public",
+    views: 350440,
+    likes: 250210,
+    rating: 4.3,
+    industryScore: 4.1,
   },
   {
     id: 3,
@@ -226,6 +246,10 @@ export const companiesList = [
     location: "اصفهان",
     explanation: "لورم ایپسوم لورم ایپسوم متن ساختگی با تولید ",
     type: "private",
+    views: 35040,
+    likes: 25030,
+    rating: 5.2,
+    industryScore: 1.1,
   },
   {
     id: 4,
@@ -235,6 +259,10 @@ export const companiesList = [
     location: "مشهد",
     explanation: "لورم ایپسوم لورم ایپسوم متن ساختگی با تولید ",
     type: "public",
+    views: 1033498,
+    likes: 231313,
+    rating: 9.2,
+    industryScore: 2.1,
   },
   {
     id: 5,
@@ -244,6 +272,10 @@ export const companiesList = [
     location: "کرج",
     explanation: "لورم ایپسوم لورم ایپسوم متن ساختگی با تولید ",
     type: "private",
+    views: 234342,
+    likes: 1932,
+    rating: 4.3,
+    industryScore: 6.2,
   },
   {
     id: 6,
@@ -253,6 +285,10 @@ export const companiesList = [
     location: "تهران",
     explanation: "لورم ایپسوم لورم ایپسوم متن ساختگی با تولید ",
     type: "private",
+    views: 6500,
+    likes: 123500,
+    rating: 3.9,
+    industryScore: 3.9,
   },
   {
     id: 7,
@@ -262,6 +298,10 @@ export const companiesList = [
     location: "تهران",
     explanation: "لورم ایپسوم لورم ایپسوم متن ساختگی با تولید ",
     type: "private",
+    views: 2600,
+    likes: 2600,
+    rating: 4.1,
+    industryScore: 4.1,
   },
   {
     id: 8,
@@ -271,6 +311,10 @@ export const companiesList = [
     location: "اصفهان",
     explanation: "لورم ایپسوم لورم ایپسوم متن ساختگی با تولید ",
     type: "private",
+    views: 2500,
+    likes: 2500,
+    rating: 4.3,
+    industryScore: 4.3,
   },
   {
     id: 9,
@@ -280,6 +324,10 @@ export const companiesList = [
     location: "تهران",
     explanation: "لورم ایپسوم لورم ایپسوم متن ساختگی با تولید ",
     type: "public",
+    views: 3000,
+    likes: 3000,
+    rating: 4.2,
+    industryScore: 4.2,
   },
 ];
 
@@ -326,6 +374,67 @@ export const marks = [
   { id: 2, loc: [32.6, 51.6], title: "Tabriz" },
   { id: 3, loc: [38.08, 46.29], title: "Isfahan" },
 ];
+export const SearchInvestor = [
+  {
+    id: 1,
+    name: "بلوبانک",
+    img: BluSearch,
+    sarmayeh: "120.000",
+    explanation:
+      "تهران، خیابان خالد اسلامبولی، منطقه ۱۷، بلوار چمران، کوچه ۱۵، پلاک ۳۰",
+    outcome: "547",
+    private: false,
+  },
+  {
+    id: 2,
+    name: "گروه علی بابا",
+    img: AliBabaSearch,
+    sarmayeh: "3.000.000.000",
+    explanation:
+      "تهران، خیابان ولیعصر، منطقه ۱۷، بلوار جنت آباد، کوچه ۱۵، پلاک ۳۰",
+    outcome: "329",
+    private: false,
+  },
+  {
+    id: 3,
+    name: "تپسی",
+    img: TapsiSearch,
+    sarmayeh: "190.000",
+    explanation:
+      "تهران، خیابان مجاهدین اسلام، منطقه ۴، بلوار مطهری، کوچه ۵، پلاک ۴۰۰",
+    outcome: "587",
+    private: true,
+  },
+  {
+    id: 4,
+    name: "دیجی‌کالا",
+    img: digikalaSearch,
+    sarmayeh: "۲۳.000.000",
+    explanation: "تهران، خیابان فرشته، منطقه ۶، بلوار چمران، کوچه ۱۰، پلاک ۴۰۰",
+    outcome: "34",
+    private: true,
+  },
+  {
+    id: 5,
+    name: "تپسی",
+    img: TapsiSearch,
+    sarmayeh: "۴۳.000.000",
+    explanation:
+      "تهران، خیابان ولیعصر، منطقه ۲۲، بلوار سید خندان، کوچه ۵، پلاک ۲۰",
+    outcome: "5",
+    private: false,
+  },
+  {
+    id: 6,
+    name: "اسنپ فود",
+    img: SnappFoodSearch,
+    sarmayeh: "۲.000.000.000",
+    explanation:
+      "تهران، خیابان دکتر شریعتی، منطقه ۱۵، بلوار میرداماد، کوچه ۱۰، پلاک ۵۰",
+    outcome: "9",
+    private: true,
+  },
+];
 export default {
   categories,
   companiesList,
@@ -335,4 +444,5 @@ export default {
   Boxes,
   recentEventsCategories,
   marks,
+  MainSearchComponent,
 };

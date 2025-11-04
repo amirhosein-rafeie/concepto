@@ -125,7 +125,7 @@ const Footer = () => {
               <img
                 src={ConceptoLogo}
                 alt="Concepto Logo"
-                className="w-[132px] h-[16px] rounded-md object-cover"
+                className="w-[132px] h-4 rounded-md object-cover"
               />
               <p className="text-sm leading-relaxed opacity-90">
                 استارتاپ‌هایی که آینده را شکل می‌دهند. از ایده‌های نوآورانه تا

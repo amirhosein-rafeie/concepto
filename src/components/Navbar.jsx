@@ -4,7 +4,7 @@ import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import BoltIcon from "@mui/icons-material/Bolt";
 import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
 import Button from "@mui/material/Button";
-import InputAdornment from "@mui/material/InputAdornment";
+
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
 import { Logo } from "../assets/images";
 
@@ -18,8 +18,7 @@ const Navbar = () => {
         </NavLink>
 
         <div className="hidden md:flex flex-1 max-w-lg ">
-          <NavLink>
-            {" "}
+          <NavLink to="/MainSearch">
             <Button
               fullWidth
               variant="outlined"
@@ -87,26 +86,23 @@ const Navbar = () => {
         <NavLink to="/companies" className="hover:text-blue-600">
           شرکت ما
         </NavLink>
-        <NavLink to="/job-offers" className="hover:text-blue-600">
+        <NavLink to="/investors" className="hover:text-blue-600">
           فرصت‌های شغلی
         </NavLink>
         <NavLink to="/news-and-events" className="hover:text-blue-600">
           اخبار و رویدادها
         </NavLink>
-        <NavLink to="/about-us" className="hover:text-blue-600">
+        <NavLink to="/aboutus" className="hover:text-blue-600">
           درباره ما
         </NavLink>
-        <NavLink to="/contact-us" className="hover:text-blue-600">
+        <NavLink to="/contactus" className="hover:text-blue-600">
           تماس با ما
         </NavLink>
       </div>
 
       {menuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 p-4 flex flex-col gap-3">
-          <NavLink
-            to="/companies"
-            className="text-gray-700 hover:text-blue-600"
-          >
+          <NavLink to="/company" className="text-gray-700 hover:text-blue-600">
             شرکت ما
           </NavLink>
           <NavLink
