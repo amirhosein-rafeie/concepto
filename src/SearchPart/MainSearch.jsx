@@ -1,14 +1,27 @@
-import { useSelector } from "react-redux";
-import { companiesList } from "../Constants/Configs";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { companiesList, SearchInvestor } from "../Constants/Configs";
 import SearchHead from "./SearchHead";
 import FilterBar from "./Filterbar";
 import FilterBox from "../components/FilterBox";
-// import DataList from "../components/DataList";
-const MainSearch = () => {
-  const { filterType } = useSelector((state) => state.data);
+import { setData } from "../redux/filterSlice";
 
-  const getFilteredData = () => {
-    let sorted = [...companiesList];
+const MainSearch = () => {
+  const dispatch = useDispatch();
+
+  const { filterType } = useSelector((state) => state.data);
+  const { activeType } = useSelector((state) => state.data);
+  const { filteredData } = useSelector((state) => state.filter);
+
+  const sourceData =
+    activeType === "companies" ? companiesList : SearchInvestor;
+
+  useEffect(() => {
+    dispatch(setData(sourceData));
+  }, [dispatch, sourceData]);
+
+  const getSortedData = () => {
+    let sorted = [...filteredData];
     switch (filterType) {
       case "popular":
         sorted.sort((a, b) => b.likes - a.likes);
@@ -28,18 +41,21 @@ const MainSearch = () => {
     return sorted;
   };
 
-  const filteredCompanies = getFilteredData();
+  const displayData = getSortedData();
 
   return (
-    <div className="bg-gray-50 max-w-full flex flex-row items-center">
-      <SearchHead />
-      <FilterBox />
-      {/* <DataList /> */}
-      <FilterBar />
-      <div className="w-[808px] bg-white rounded-2xl border border-dashed border-gray-300 mt-4 p-5 flex flex-col gap-2">
-        {filteredCompanies.map((cat) => (
+    <div className="bg-gray-50 min-w-screen flex flex-cols items-center">
+      <div>
+        <FilterBox />
+      </div>
+
+      <div className="bg-white rounded-2xl border border-dashed border-gray-300 mt-4 p-5 flex flex-col gap-2">
+        <SearchHead />
+        <FilterBar />
+
+        {displayData.map((cat) => (
           <div
-            key={cat.id}
+            key={cat.id ?? cat.name}
             className="w-3xl h-[119px] flex justify-between items-center border-b border-gray-200 py-2"
           >
             <div className="flex items-center gap-4">

@@ -224,6 +224,8 @@ export const companiesList = [
     likes: 25100,
     rating: 5.3,
     industryScore: 5.1,
+    private: false,
+    employees: 12,
   },
   {
     id: 2,
@@ -237,6 +239,8 @@ export const companiesList = [
     likes: 250210,
     rating: 4.3,
     industryScore: 4.1,
+    private: false,
+    employees: 23,
   },
   {
     id: 3,
@@ -250,6 +254,8 @@ export const companiesList = [
     likes: 25030,
     rating: 5.2,
     industryScore: 1.1,
+    private: false,
+    employees: 97,
   },
   {
     id: 4,
@@ -263,6 +269,8 @@ export const companiesList = [
     likes: 231313,
     rating: 9.2,
     industryScore: 2.1,
+    private: false,
+    employees: 4,
   },
   {
     id: 5,
@@ -276,6 +284,8 @@ export const companiesList = [
     likes: 1932,
     rating: 4.3,
     industryScore: 6.2,
+    private: false,
+    employees: 15,
   },
   {
     id: 6,
@@ -289,6 +299,8 @@ export const companiesList = [
     likes: 123500,
     rating: 3.9,
     industryScore: 3.9,
+    private: false,
+    employees: 56,
   },
   {
     id: 7,
@@ -302,6 +314,8 @@ export const companiesList = [
     likes: 2600,
     rating: 4.1,
     industryScore: 4.1,
+    private: false,
+    employees: 45,
   },
   {
     id: 8,
@@ -315,6 +329,8 @@ export const companiesList = [
     likes: 2500,
     rating: 4.3,
     industryScore: 4.3,
+    private: false,
+    employees: 100,
   },
   {
     id: 9,
@@ -328,6 +344,8 @@ export const companiesList = [
     likes: 3000,
     rating: 4.2,
     industryScore: 4.2,
+    private: false,
+    employees: 17,
   },
 ];
 

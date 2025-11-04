@@ -1,7 +1,8 @@
 import CropSquareOutlinedIcon from "@mui/icons-material/CropSquareOutlined";
-import { companiesList } from "../Constants/Configs";
+
 import FilterBox from "../components/FilterBox";
 import SearchHead from "./SearchHead";
+import { SearchInvestor } from "../Constants/Configs";
 const AdvisorSearch = () => {
   return (
     <div>
@@ -29,7 +30,7 @@ const AdvisorSearch = () => {
             <span className="w-1/4 text-right pr-4">مکان</span>
           </div>
         </div>
-        {companiesList.map((cat, index) => (
+        {SearchInvestor.map((cat, index) => (
           <div
             key={index}
             className="flex items-center w-full px-6 py-3 border-b border-gray-200 hover:bg-gray-50 transition-all duration-200 cursor-pointer"
