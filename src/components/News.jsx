@@ -7,7 +7,7 @@ import Amir from "../assets/Omid.png";
 import Farhad from "../assets/F.png";
 import Atousa from "../assets/Atousa.png";
 import Snappfood from "../assets/snappfood.png";
-
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 const News = () => {
   const toPersianDigits = (str) => {
     const persianDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
@@ -56,26 +56,51 @@ const News = () => {
     },
   ];
 
-  return (
-    <div className="relative flex flex-col md:flex-row justify-center items-center gap-10 py-10 px-4">
-      <img src={Tooltip} className="w-full relative z-0" alt="Tooltip" />
+  const radialGradient = `radial-gradient(circle at 50% 10%,#0148B0 25%,#00183BBF 85%)`;
 
-      <div className="absolute flex flex-col gap-6 z-10">
-        <div className="flex justify-between items-center w-full mb-8">
-          <h2 className="text-2xl font-bold text-white">تازه ترین اخبار</h2>
+  return (
+    <section className="relative w-full flex flex-col items-center py-16 px-4">
+      <div
+        className="
+          absolute inset-0 -z-10 h-[420px] md:h-[520px] overflow-hidden
+          [clip-path:ellipse(120%_70%_at_50%_0%)]
+        "
+        aria-hidden="true"
+      >
+        <div
+          className="absolute inset-0 bg-center bg-cover scale-110 blur-sm brightness-75"
+          style={{ backgroundImage: `url(${Tooltip})` }}
+        />
+
+        <div
+          className="absolute inset-0"
+          style={{
+            background: radialGradient,
+            mixBlendMode: "overlay",
+            opacity: 1,
+            pointerEvents: "none",
+          }}
+        />
+
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.18) 100%)",
+          }}
+        />
+      </div>
+      <div className="relative z-10 w-full max-w-7xl px-6">
+        <div className="flex justify-between items-center w-full mb-4">
+          <h2 className="text-2xl font-bold text-white">شرکت‌های محبوب</h2>
+
           <button className="text-white text-sm hover:underline flex items-center gap-2">
+            <ArrowBackIosNewIcon sx={{ fontSize: 14 }} />
             مشاهده همه
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-              <path
-                fillRule="evenodd"
-                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
           </button>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-6 mt-8">
+        <div className="flex flex-col md:flex-row gap-6 mt-8 justify-center">
           {boxes.map((box) => (
             <div
               key={box.id}
@@ -86,10 +111,8 @@ const News = () => {
                   src={box.headerImage}
                   alt={box.brand}
                   className="w-full h-full object-cover object-center"
-                  style={{ objectPosition: "center" }}
                 />
                 <div className="absolute inset-0 bg-black/20"></div>
-                <div className="absolute top-4 right-4"></div>
               </div>
 
               <div className="flex-1 p-6 flex flex-col justify-between">
@@ -124,7 +147,7 @@ const News = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

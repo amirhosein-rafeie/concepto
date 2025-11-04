@@ -34,6 +34,8 @@ import AliBabaSearch from "./AliBabaSearch.png";
 import SnappFoodSearch from "./SnappFoodSearch.png";
 import IranCellSearch from "./IranCellSearch.png";
 import digikalaSearch from "./digikalaSearch.jpg";
+import jobinjaSearch from "./jobinjaSearch.png"
+import DivarSearch from "./DivarSearch.png"
 export {
   Lamp,
   LoginImage,
@@ -71,4 +73,6 @@ export {
   SnappFoodSearch,
   IranCellSearch,
   digikalaSearch,
+  jobinjaSearch,
+  DivarSearch
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ConceptoLogo from "../assets/concepto.png";
 import SamanLogo from "../assets/saman.png";
 import Location from "../assets/Location.png";
@@ -8,8 +8,26 @@ import Instagram from "../assets/_Instagram.png";
 import Facebook from "../assets/_Facebook.png";
 import Twitter from "../assets/twitter.png";
 import Tooltip2 from "../assets/Tooltip2.jpg";
+import * as yup from "yup";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const schema = yup.object().shape({
+    email: yup
+      .string()
+      .email("فرمت ایمیل معتبر نیست")
+      .required("ایمیل الزامی است"),
+  });
+  const handleSubmit = async () => {
+    try {
+      await schema.validate({ email });
+      setError("");
+      alert("ایمیل معتبر است ✅");
+    } catch (err) {
+      setError(err.message);
+    }
+  };
   const radialGradient = `radial-gradient(circle at 50% 10%,#0148B0 25%,#00183BBF 75%)`;
   const toPersianDigits = (str) => {
     const persianDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
@@ -137,17 +155,22 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">
               از جدیدترین اخبار مطلع شوید
             </h3>
-
             <div className="flex items-center gap-3">
               <input
                 type="email"
+                value={email}
                 placeholder="ایمیل خود را وارد کنید"
+                onChange={(e) => setEmail(e.target.value)}
                 className="flex-1 bg-white/90 text-gray-800 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
               />
-              <button className="bg-blue-500 text-white px-5 py-3 rounded-lg hover:bg-blue-600 transition-all duration-150">
+              <button
+                onClick={handleSubmit}
+                className="bg-blue-500 text-white px-5 py-3 rounded-lg hover:bg-blue-600 transition-all duration-150"
+              >
                 عضویت
               </button>
             </div>
+            {error && <p className="text-red-400 text-sm px-1 mt-1">{error}</p>}
 
             <div className="flex items-start gap-3 mt-2">
               <img src={Location} alt="Location" className="w-5 h-5 mt-1" />
@@ -155,18 +178,16 @@ const Footer = () => {
                 آدرس: تهران، خیابان ولیعصر، خیابان سرو، ساختمان کانسپتو
               </p>
             </div>
-
             <div className="flex items-center gap-3">
               <img src={Phone} alt="Phone" className="w-5 h-5" />
               <p className="text-sm">شماره تماس: ۰۹۱۲۳۴۵۶۷۸۹</p>
             </div>
-
             <div>
               <div className="text-sm font-semibold mb-2">
                 ما را در شبکه‌های اجتماعی دنبال کنید
               </div>
               <div className="flex items-center gap-3">
-                {[Facebook, LinkedIn, Instagram, Twitter].map((icon, i) => (
+                {[LinkedIn, Instagram, Twitter, Facebook].map((icon, i) => (
                   <a
                     key={i}
                     href="#"

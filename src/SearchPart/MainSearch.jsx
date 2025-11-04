@@ -89,5 +89,10 @@ const MainSearchComPanies = () => {
       type: "public",
     },
   ];
+  return (
+    <>
+      <div className="w-[1224px] h-[880px] rounded-[16px] "></div>
+    </>
+  );
 };
 export default MainSearchComPanies;

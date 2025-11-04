@@ -1,53 +1,21 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import BoltIcon from "@mui/icons-material/Bolt";
 import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
-import Button from "@mui/material/Button";
-import InputAdornment from "@mui/material/InputAdornment";
-import SearchSharpIcon from "@mui/icons-material/SearchSharp";
 import { Logo } from "../assets/images";
+import { SearchInput } from "./SearchInput";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100 ">
-      <div className="flex items-center justify-between flex-row-reverse">
+      <div className="flex items-center justify-between flex-row-reverse px-4 py-3">
         <NavLink to="/" className="shrink-0">
           <img src={Logo} alt="logo" className="w-40 h-auto" />
         </NavLink>
-
-        <div className="hidden md:flex flex-1 max-w-lg ">
-          <NavLink>
-            {" "}
-            <Button
-              fullWidth
-              onClick={{}}
-              variant="outlined"
-              startIcon={<SearchSharpIcon className="text-gray-400" />}
-              sx={{
-                fontFamily: "Vazirmatn",
-                textTransform: "none",
-                color: "rgb(107 114 128)",
-                backgroundColor: "white",
-                borderColor: "rgb(209 213 219)",
-                borderRadius: "8px",
-                px: 1.5,
-                py: 1,
-                "&:hover": {
-                  backgroundColor: "rgb(249 250 251)",
-                  borderColor: "rgb(156 163 175)",
-                },
-                "& .MuiButton-startIcon": {
-                  marginLeft: "8px",
-                  marginRight: "0",
-                },
-                direction: "rtl",
-              }}
-            >
-              جست‌وجو کسب و کار
-            </Button>
-          </NavLink>
+        <div className="hidden md:flex flex-1 max-w-lg px-4">
+          <SearchInput className="w-full" />
         </div>
 
         <div className="hidden md:flex items-center gap-4">

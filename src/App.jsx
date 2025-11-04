@@ -8,7 +8,8 @@ const PhoneLogin = lazy(() => import("./pages/PhoneLogin"));
 const OTP = lazy(() => import("./configs/OTP"));
 const Contact = lazy(() => import("./pages/ContactUs"));
 const NotFound = lazy(() => import("./HomePage/NotFound"));
-
+const Navbar = lazy(() => import("./components/Navbar"));
+import SearchHead from "./SearchPart/SearchBy";
 const LoadingScreen = () => (
   <div className="flex items-center justify-center h-screen text-gray-600">
     <span className="animate-pulse">در حال بارگذاری...</span>
@@ -27,22 +28,7 @@ function App() {
             </Layout>
           }
         />
-        <Route
-          path="/normallogin"
-          element={
-            <Layout>
-              <NormalLogin />
-            </Layout>
-          }
-        />
-        <Route
-          path="/phonelogin"
-          element={
-            <Layout>
-              <PhoneLogin />
-            </Layout>
-          }
-        />
+        <Route path="/normallogin" element={<NormalLogin />} />
         <Route
           path="/otp"
           element={
@@ -51,7 +37,15 @@ function App() {
             </Layout>
           }
         />
-
+        <Route
+          path="/Mainsearch"
+          element={
+            <>
+              <Navbar />
+              <SearchHead />
+            </>
+          }
+        />
         <Route
           path="/contactus"
           element={

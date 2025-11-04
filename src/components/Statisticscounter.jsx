@@ -1,4 +1,3 @@
-import { duration } from "@mui/material/styles";
 import React, { useState, useEffect, useRef } from "react";
 
 const toPersianDigits = (str) => {
@@ -60,18 +59,24 @@ const Statisticscounter = ({
   }, [isVisible, number]);
 
   return (
-    <div className="font-vazir relative" ref={elementRef}>
+    <div className="font-vazir relative inline-block" ref={elementRef}>
       {withCircle && (
         <span
           aria-hidden
-          className="absolute -bottom-4 left-1/2 -translate-x-1/2 block w-[85px] h-[85px] rounded-full bg-[#FFECB3] opacity-60"
+          className="absolute z-0 w-[85px] h-[85px] rounded-full bg-[#FFECB3]"
+          style={{
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
         />
       )}
-      <div className="text-4xl font-bold text-gray-800 mb-6">
+
+      <div className="flex items-center gap-2 relative z-10 text-gray-800 text-4xl font-bold mb-1">
         {showPlus && <span className="ml-1">+</span>}
         {toPersianDigits(count.toLocaleString())}
+        <span className="text-lg font-medium text-gray-600">{title}</span>
       </div>
-      <div className="text-lg text-gray-600 font-medium">{title}</div>
     </div>
   );
 };
