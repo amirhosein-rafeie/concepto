@@ -15,7 +15,6 @@ import {
 } from "../assets/images";
 
 const Mainsearch = () => {
-  const [filter, setFilter] = useState("");
   const companiesList = [
     { id: 1, name: "بلوبانک", img: BluSearch },
     { id: 2, name: "اسنپ", img: snapp },

@@ -8,7 +8,9 @@ import Farhad from "../assets/F.png";
 import Atousa from "../assets/Atousa.png";
 import Snappfood from "../assets/snappfood.png";
 import { Boxes } from "../Constants/Configs";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 const News = () => {
+  const radialGradient = `radial-gradient(circle at 50% 10%,#0148B0 25%,#00183BBF 85%)`;
   const toPersianDigits = (str) => {
     const persianDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
     return str
@@ -53,7 +55,7 @@ const News = () => {
           <h2 className="text-2xl font-bold text-white">شرکت‌های محبوب</h2>
 
           <button className="text-white text-sm hover:underline flex items-center gap-2">
-            <ArrowBackIosNewIcon sx={{ fontSize: 14 }} />
+            <ArrowForwardIosIcon sx={{ fontSize: 14 }} />
             مشاهده همه
           </button>
         </div>

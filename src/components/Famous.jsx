@@ -1,7 +1,7 @@
 import Locationicon from "../assets/Location.png";
 import Tooltip from "../assets/Tooltip.png";
 import Star from "../assets/Star.png";
-
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { boxes } from "../Constants/Configs";
 const Famous = () => {
   const toPersianDigits = (str) => {
@@ -48,7 +48,7 @@ const Famous = () => {
           <h2 className="text-2xl font-bold text-white">شرکت‌های محبوب</h2>
 
           <button className="text-white text-sm hover:underline flex items-center gap-2">
-            <ArrowBackIosNewIcon sx={{ fontSize: 14 }} />
+            <ArrowForwardIosIcon sx={{ fontSize: 14 }} />
             مشاهده همه
           </button>
         </div>
