@@ -5,12 +5,11 @@ import BoltIcon from "@mui/icons-material/Bolt";
 import image from "../assets/image.png";
 import Land1 from "../assets/Land1.png";
 import Land2 from "../assets/Land2.png";
-import Statistics from "./Statistics";
 
 const Landing = () => {
   return (
     <>
-      <section className="p-[20px] min-h-screen flex flex-col items-center justify-center bg-[#FFFFFF] font-vazir overflow-hidden">
+      <section className="p-5 min-h-screen flex flex-col items-center justify-center bg-[#FFFFFF] font-vazir overflow-hidden">
         <div className="text-center max-w-[900px] px-4 mb-16 sm:mb-20">
           <h1 className="text-5xl font-bold text-gray-800 mb-8 sm:mb-10 leading-[1.4]">
             با سرچ کمتر نتیجه بهتر بگیر
@@ -77,13 +76,13 @@ const Landing = () => {
           <img
             src={Land1}
             alt="mobile"
-            className="absolute right-[80px] top-[24px] w-[250px] h-auto z-20 rounded-2xl "
+            className="absolute right-20 top-6 w-[250px] h-auto z-20 rounded-2xl "
           />
 
           <img
             src={Land2}
             alt="dashboard"
-            className="absolute left-[40px] bottom-[-40px] w-[400px] h-auto z-30 rounded-2xl shadow-2xl hidden sm:block"
+            className="absolute left-10 -bottom-10 w-[400px] h-auto z-30 rounded-2xl shadow-2xl hidden sm:block"
           />
         </div>
       </section>

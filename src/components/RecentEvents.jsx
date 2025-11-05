@@ -5,9 +5,9 @@ import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { maram, sakoo, startup, digikalaProgram } from "../assets/images";
-import TiltCard from "../HomePage/TileCard";
 
+import TiltCard from "../HomePage/TileCard";
+import { recentEventsCategories } from "../Constants/Configs";
 const RecentEvents = () => {
   const [showAllMobile, setShowAllMobile] = useState(true);
   const [, setIsemobile] = useState(
@@ -22,44 +22,7 @@ const RecentEvents = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  const recentEventsCategories = [
-    {
-      id: 1,
-      title: "بوت کمپ برنامه نویسی دیجی کالا",
-      discription:
-        "در این دوره شما بر اساس سرفصل‌های تعیین شده توسط اساتید منتخب دیجی‌کالا، بوژان و...",
-      img: digikalaProgram,
-      location: "تهران ,ایران",
-      time: "۲۹ بهمن",
-    },
-    {
-      id: 2,
-      title: "سکوی پرتاب غزال.",
-      discription:
-        "سکوی پرتاب غزال، 27 دی ماه سال جاری با هدف شناسایی تیم‌ها و سرمایه‌گذاری بر استارتاپ‌های سازنده بازی های رایانه ای برگزار خواهد شد.",
-      img: sakoo,
-      location: "تهران، ایران",
-      time: "27 دی",
-    },
-    {
-      id: 3,
-      title: "سکوی پرتاب قزوین.",
-      discription:
-        "رویداد تخصصی سرمایه‌گذاری سکوی پرتاب قزوین با هدف شناسایی تیم‌ها و سرمایه‌گذاری بر استارتاپ‌های این استان برگزار می‌شود.",
-      img: maram,
-      location: "قزوین , ایران",
-      time: "24 آبان",
-    },
-    {
-      id: 4,
-      title: "فراخوان جذب ایده و استارتاپ.",
-      discription:
-        "در حاشیه همایش معدن‌کاری دیجیتال، خانه خلاق و نوآوری دنیای اقتصاد برای ایده‌ها و استارتاپ‌های حوزه معدن جذب سرمایه می‌کند.",
-      img: startup,
-      location: "تهران، ایران",
-      time: "22 شهریور",
-    },
-  ];
+
   const visibleEvents =
     typeof window !== "undefined" && window.innerWidth < 640 && !showAllMobile
       ? recentEventsCategories.slice(0, 1)

@@ -1,16 +1,8 @@
-import Snappcomp from "../assets/snappcomp.png";
-import Alibabcomp from "../assets/alibabcomp.png";
-import Digicomp from "../assets/Digicomp.png";
-import Farabicomp from "../assets/Farabi.png";
 import Locationicon from "../assets/Location.png";
 import Tooltip from "../assets/Tooltip.png";
 import Star from "../assets/Star.png";
-import snapp from "../assets/snapp2.png";
-import Alibaba from "../assets/Alibabapic.png";
-import Farabi from "../assets/Farabipic.jpg";
-import Digikala from "../assets/Digi.png";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
+import { boxes } from "../Constants/Configs";
 const Famous = () => {
   const toPersianDigits = (str) => {
     const persianDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
@@ -18,65 +10,6 @@ const Famous = () => {
       .toString()
       .replace(/\d/g, (digit) => persianDigits[parseInt(digit)]);
   };
-
-  const boxes = [
-    {
-      id: 1,
-      pre: "تجارت الکترونیک",
-      title: "شرکت اسنپ",
-      description:
-        "از درخواست خودرو گرفته تا سفارش غذا، خرید سوپرمارکتی، خرید بلیط سفر، مشاوره‌ی پزشکی و روانشناسی، رزرو هتل و... را میتوانید با سوپراپلیکیشن اسنپ انجام دهید.",
-      headerImage: Snappcomp,
-      city: "تهران ، ایران",
-      brand: "اسنپ",
-      rate: "5",
-      newContacts: 392,
-      newInvestors: 2134,
-      prof: snapp,
-    },
-    {
-      id: 2,
-      pre: "تجارت الکترونیک",
-      title: "شرکت دیجی کالا",
-      description:
-        "هر آنچه که نیاز دارید با بهترین قیمت از دیجی‌کالا بخرید! جدیدترین انواع گوشی موبایل، لپ تاپ، لباس، لوازم آرایشی و بهداشتی، کتاب، لوازم خانگی، خودرو و.",
-      headerImage: Digicomp,
-      city: "تهران ، ایران",
-      brand: "دیجی کالا",
-      rate: "4",
-      newContacts: 423,
-      newInvestors: 2110,
-      prof: Digikala,
-    },
-    {
-      id: 3,
-      pre: "تجارت الکترونیک",
-      title: "کارگزاری فارابی",
-      description:
-        "کارگزاری بورس خدماتی شامل خرید و فروش سهام و دریافت کد بورسی را ارائه می‌کند؛ همه این خدمات در کارگزاری فارابی به‌صورت غیرحضوری در اختیار شماست.",
-      headerImage: Farabicomp,
-      city: "تهران ، ایران",
-      brand: "کارگزاری فارابی",
-      rate: "5",
-      newContacts: 332,
-      newInvestors: 2130,
-      prof: Farabi,
-    },
-    {
-      id: 4,
-      pre: "تجارت الکترونیک",
-      title: "شرکت علی بابا",
-      description:
-        "علی‌بابا برندی از هلدینگ پرافتخار توشا (توسعه تجربه شایسته سفر) است، سامانه‌ای که به‌واسطه پشتیبانی و حمایت شما در سکوی اول گردشگری کشور ایستاده.",
-      headerImage: Alibabcomp,
-      city: "تهران ، ایران",
-      brand: "علی بابا",
-      rate: "5",
-      newContacts: 396,
-      newInvestors: 2910,
-      prof: Alibaba,
-    },
-  ];
 
   const radialGradient = `radial-gradient(circle at 50% 10%,#0148B0 25%,#00183BBF 85%)`;
 

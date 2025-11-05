@@ -7,7 +7,7 @@ import Amir from "../assets/Omid.png";
 import Farhad from "../assets/F.png";
 import Atousa from "../assets/Atousa.png";
 import Snappfood from "../assets/snappfood.png";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import { Boxes } from "../Constants/Configs";
 const News = () => {
   const toPersianDigits = (str) => {
     const persianDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
@@ -15,48 +15,6 @@ const News = () => {
       .toString()
       .replace(/\d/g, (digit) => persianDigits[parseInt(digit)]);
   };
-
-  const boxes = [
-    {
-      id: 1,
-      pre: "تجارت الکترونیک",
-      title: "اسنپ رکورد خود را با بیش از ۵ میلیون سفر روزانه شکست",
-      description:
-        "در ماه پایانی سال ۱۴۰۲، اسنپ رکورد ۵ میلیون و ۱۳۹ هزار و ۶۵ سفر روزانه در سرویس خودرو و باکس را زد. این رکورد در روز چهارشنبه، دوم اسفند، ثبت شد.",
-      profilepic: Farhad,
-      headerImage: Greensnapp,
-      name: "فرهاد رئوفی",
-      date: "1402/12/11",
-      brand: "اسنپ",
-    },
-    {
-      id: 2,
-      pre: "تجارت الکترونیک",
-      title: "بار دیگر اسنپ فود به دلیل مشکل فنی از دسترس خارج شد",
-      description:
-        "بار دیگر اسنپ‌فود به‌دلیل مشکل فنی از دسترس کاربران خارج شد. این مشکل اوایل بهمن هم تکرار شده بود و رفع آن ساعت‌ها طول کشید.",
-      profilepic: Amir,
-      headerImage: Snappfood,
-      name: "امیر بختیاری",
-      date: "1402/12/5",
-      brand: "اسنپ فود",
-    },
-    {
-      id: 3,
-      pre: "تجارت الکترونیک",
-      title:
-        "رکورد ثبت سفارش آنلاین خدمات گردشگری شکسته شد: ثبت ۲ خدمت در هر ثانیه",
-      description:
-        "با نزدیکی به سال نو و افزایش سفرهای بین شهری، رکورد ثبت سفارش آنلاین خدمات گردشگری شکسته شد.",
-      profilepic: Atousa,
-      headerImage: Ali,
-      name: "آتوسا صفوی زاده",
-      date: "1402/12/3",
-      brand: "علی بابا",
-    },
-  ];
-
-  const radialGradient = `radial-gradient(circle at 50% 10%,#0148B0 25%,#00183BBF 85%)`;
 
   return (
     <section className="relative w-full flex flex-col items-center py-16 px-4">
@@ -100,8 +58,8 @@ const News = () => {
           </button>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-6 mt-8 justify-center">
-          {boxes.map((box) => (
+        <div className="flex flex-col md:flex-row gap-6 mt-8">
+          {Boxes.map((box) => (
             <div
               key={box.id}
               className="h-[418px] w-[392px] bg-white rounded-[24px] shadow-lg overflow-hidden flex flex-col"

@@ -4,25 +4,8 @@ import Email from "../assets/Email.png";
 import Setting from "../assets/Setting.png";
 import Home from "../assets/Homepic.png";
 import Magglass from "../assets/magglass.png";
+import { cards } from "../Constants/Configs";
 export default function LandingCard() {
-  const cards = [
-    {
-      id: 1,
-      text: "با کسب و کارها ارتباط بگیر",
-      type: "contact",
-    },
-    {
-      id: 2,
-      text: "کسب و کارهای مناسب رو پیدا کن",
-      type: "search",
-    },
-    {
-      id: 3,
-      text: "شرکت‌های مورد علاقت رو پیدا کن",
-      type: "contact",
-    },
-  ];
-
   return (
     <div className="flex flex-col md:flex-row justify-center items-center gap-20 py-10 px-4">
       {cards.map((card) => (

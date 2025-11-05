@@ -83,13 +83,14 @@ const PhoneLogin = () => {
                     style: { direction: "ltr", textAlign: "left" },
                   }}
                 />
-
-                <button
-                  type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl mt-6 text-xl transition duration-200 cursor-pointer"
-                >
-                  ورود
-                </button>
+                <NavLink to="/OTP">
+                  <button
+                    type="submit"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl mt-6 text-xl transition duration-200 cursor-pointer"
+                  >
+                    ورود
+                  </button>
+                </NavLink>
               </Form>
             )}
           </Formik>
