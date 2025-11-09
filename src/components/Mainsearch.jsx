@@ -1,33 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useSearchParams } from "react-router-dom";
 import BoltIcon from "@mui/icons-material/Bolt";
 import SaveIcon from "../assets/Save.png";
 import Flag from "../assets/flag.png";
-import {
-  BluSearch,
-  snapp,
-  AliBabaSearch,
-  SnappFoodSearch,
-  TapsiSearch,
-  jobinjaSearch,
-  IranCellSearch,
-  DivarSearch,
-  digikalaSearch,
-} from "../assets/images";
+import { initialList } from "../Constants/Configs";
 
 const Mainsearch = () => {
-  const companiesList = [
-    { id: 1, name: "بلوبانک", img: BluSearch },
-    { id: 2, name: "اسنپ", img: snapp },
-    { id: 3, name: "علی‌بابا", img: AliBabaSearch },
-    { id: 4, name: "اسنپ فود", img: SnappFoodSearch },
-    { id: 5, name: "تپسی", img: TapsiSearch },
-    { id: 6, name: "جابینجا", img: jobinjaSearch },
-    { id: 7, name: "ایرانسل", img: IranCellSearch },
-    { id: 8, name: "دیوار", img: DivarSearch },
-    { id: 9, name: "دیجی‌کالا", img: digikalaSearch },
-    { id: 10, name: "بلوبانک", img: BluSearch },
-    { id: 11, name: "اسنپ فود", img: SnappFoodSearch },
-  ];
+  const [searchParams, setSearchParams] = useSearchParams();
+  const paramQ = searchParams.get("q") || "";
+  const focusRequested = searchParams.get("focus") === "1";
+
+  const [query, setQuery] = useState(paramQ);
+  const [companiesList] = useState(initialList);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    setQuery(paramQ);
+  }, [paramQ]);
+
+  useEffect(() => {
+    if (focusRequested && inputRef.current) {
+      setTimeout(() => inputRef.current?.focus(), 50);
+    }
+  }, [focusRequested]);
+
+  const filtered = companiesList.filter((c) =>
+    c.name
+      .normalize("NFKD")
+      .toLowerCase()
+      .includes(query.normalize("NFKD").toLowerCase())
+  );
+
+  const handleChange = (e) => {
+    const v = e.target.value;
+    setQuery(v);
+    const p = new URLSearchParams();
+    if (v) p.set("q", v);
+    setSearchParams(p, { replace: true });
+  };
 
   return (
     <section className="flex justify-center bg-[#F3F5F6] py-8">
@@ -43,33 +53,50 @@ const Mainsearch = () => {
           </div>
         </div>
 
+        <div className="mb-4">
+          <input
+            ref={inputRef}
+            dir="rtl"
+            value={query}
+            onChange={handleChange}
+            placeholder="جست‌وجو در پیشنهادها..."
+            className="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none"
+          />
+        </div>
+
         <div className="flex flex-col divide-y">
-          {companiesList.map((company, index) => (
-            <div
-              key={company.id}
-              className={`flex items-center justify-between px-4 rounded-lg transition h-[72px] ${
-                index === 0
-                  ? "shadow-sm bg-white hover:shadow-md"
-                  : "hover:bg-gray-50"
-              }`}
-            >
-              <div className="flex items-center gap-3">
+          {filtered.length > 0 ? (
+            filtered.map((company, index) => (
+              <div
+                key={company.id + "-" + index}
+                className={`flex items-center justify-between px-4 rounded-lg transition h-[72px] ${
+                  index === 0
+                    ? "shadow-sm bg-white hover:shadow-md"
+                    : "hover:bg-gray-50"
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <img
+                    src={company.img}
+                    alt={company.name}
+                    className="w-10 h-10 rounded-[12px]"
+                  />
+                  <span className="text-gray-800 text-sm font-medium">
+                    {company.name}
+                  </span>
+                </div>
                 <img
-                  src={company.img}
-                  alt={company.name}
-                  className="w-10 h-10 rounded-[12px]"
+                  src={SaveIcon}
+                  alt="save"
+                  className="w-4 h-4 cursor-pointer opacity-80 hover:opacity-100"
                 />
-                <span className="text-gray-800 text-sm font-medium">
-                  {company.name}
-                </span>
               </div>
-              <img
-                src={SaveIcon}
-                alt="save"
-                className="w-4 h-4 cursor-pointer opacity-80 hover:opacity-100"
-              />
+            ))
+          ) : (
+            <div className="p-6 text-center text-gray-500">
+              هیچ نتیجه‌ای یافت نشد.
             </div>
-          ))}
+          )}
         </div>
       </div>
     </section>

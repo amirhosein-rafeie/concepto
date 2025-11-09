@@ -12,7 +12,7 @@ export function SearchInput({ className }) {
     params.set("focus", "1");
     const to = `/Mainsearch?${params.toString()}`;
 
-    if (location.pathname === "/Mainsearch") {
+    if (location.pathname === "/companies") {
       navigate(to, { replace: true });
     } else {
       navigate(to);

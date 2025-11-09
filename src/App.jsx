@@ -13,6 +13,7 @@ const Contact = lazy(() => import("./pages/ContactUs"));
 const NotFound = lazy(() => import("./HomePage/NotFound"));
 import MainSearch from "./SearchPart/MainSearch";
 import AdvisorSearch from "./SearchPart/InvestorSearch";
+import Mainsearch from "./components/Mainsearch";
 
 const LoadingScreen = () => (
   <div className="flex items-center justify-center h-screen text-gray-600">
@@ -56,6 +57,14 @@ function App() {
             element={
               <Layout>
                 <MainSearch />
+              </Layout>
+            }
+          />
+          <Route
+            path="/Mainsearch"
+            element={
+              <Layout>
+                <Mainsearch />
               </Layout>
             }
           />

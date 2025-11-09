@@ -27,6 +27,8 @@ import { AliBabaSearch } from "../assets/images";
 import { SnappFoodSearch } from "../assets/images";
 import { IranCellSearch } from "../assets/images";
 import { Snapp } from "../assets/images";
+import { DivarSearch } from "../assets/images/index.js";
+import { jobinjaSearch } from "../assets/images/index.js";
 import Snappcomp from "../assets/snappcomp.png";
 import Alibabcomp from "../assets/alibabcomp.png";
 import Digicomp from "../assets/Digicomp.png";
@@ -44,6 +46,19 @@ import Atousa from "../assets/Atousa.png";
 import Snappfood from "../assets/snappfood.png";
 
 import { blu, asiatech, farabi, bimeh, alibaba } from "../assets/images";
+export   const initialList = [
+    { id: 1, name: "بلوبانک", img: BluSearch },
+    { id: 2, name: "اسنپ", img: snapp },
+    { id: 3, name: "علی‌بابا", img: AliBabaSearch },
+    { id: 4, name: "اسنپ فود", img: SnappFoodSearch },
+    { id: 5, name: "تپسی", img: TapsiSearch },
+    { id: 6, name: "جابینجا", img: jobinjaSearch },
+    { id: 7, name: "ایرانسل", img: IranCellSearch },
+    { id: 8, name: "دیوار", img: DivarSearch },
+    { id: 9, name: "دیجی‌کالا", img: digikalaSearch },
+    { id: 10, name: "بلوبانک", img: BluSearch },
+    { id: 11, name: "اسنپ فود", img: SnappFoodSearch },
+  ];
 export const recentEventsCategories = [
   {
     id: 1,
